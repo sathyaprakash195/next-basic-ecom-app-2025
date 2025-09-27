@@ -1,7 +1,10 @@
 "use server";
+import { connectToMongoDB } from "@/config/mongodb-config";
 import { IOrder } from "@/interfaces";
 
 import OrderModel from "@/models/order-model";
+
+connectToMongoDB();
 
 export const placeOrder = async (orderData: Partial<IOrder>) => {
   try {

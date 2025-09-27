@@ -1,5 +1,8 @@
 "use server";
+import { connectToMongoDB } from "@/config/mongodb-config";
 import { IProduct } from "@/interfaces";
+
+connectToMongoDB();
 
 export const getAllProducts = async () => {
   try {
